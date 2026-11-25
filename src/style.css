@@ -21,3 +21,8 @@ button[data-key] { min-width: 44px; touch-action: none; }
 #messages p { margin: 5px 0; }
 #chat { margin-top: 12px; }
 #chat-form input { flex: 1; }
+a { color: #b4d5c7; }
+#assets { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin-top: 12px; }
+#assets label { display: grid; gap: 5px; min-width: 0; }
+#assets input { max-width: 100%; }
+#place { margin-top: 10px; }

@@ -1,8 +1,17 @@
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
   server: {
     host: '127.0.0.1',
     proxy: { '/world': { target: 'ws://127.0.0.1:8080', ws: true } },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        solo: fileURLToPath(new URL('./solo.html', import.meta.url)),
+      },
+    },
   },
 });

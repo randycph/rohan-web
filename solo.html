@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Single-player map viewer</title>
+</head>
+<body>
+  <main>
+    <header><h1>Single-player map viewer</h1><a href="/">Multiplayer demo</a></header>
+    <form id="assets">
+      <label>Map (.glb) <input name="map" type="file" accept=".glb" required></label>
+      <label>Character (.glb) <input name="character" type="file" accept=".glb" required></label>
+      <button>Load scene</button>
+    </form>
+    <p id="status" role="status">Choose a map and a character. Files stay in this browser tab.</p>
+    <section id="viewport" aria-label="3D map"></section>
+    <button id="place" hidden>Choose another spawn point</button>
+    <p>Click the map to spawn. Move with WASD or arrow keys.</p>
+  </main>
+  <script type="module" src="/src/solo.js"></script>
+</body>
+</html>

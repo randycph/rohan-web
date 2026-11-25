@@ -23,3 +23,9 @@ Explorer progress is saved in `.local/profiles.json`. Rejoin with the same name 
 This project has its own test world and game server. The Windows installation includes PHP login and server-list endpoints, but the supplied files did not provide a documented gameplay protocol or game client source. World entry and synchronization with that server would require an authorized, documented server interface.
 
 The default listener is local to the machine running Node. For deployment, serve through HTTPS with WebSocket forwarding on `/world`, set `WORLD_ORIGIN` to the exact public HTTPS origin, and keep the Node listener behind the proxy. The demo uses guest profiles and local disk saves.
+
+## Single-player map viewer
+
+Open http://127.0.0.1:8080/solo.html. Choose one map and one character as self-contained glTF binary (.glb) exports with embedded textures. Export with Y up and without optional Draco, Meshopt, or KTX2 compression. Click **Load scene**, click the floor to spawn, and use WASD or the arrow keys to move. If the character has named idle and walk or run animations, the viewer plays them automatically. Movement follows the visible geometry with a simple ground check.
+
+The viewer reads the two files in the browser. It uses no game server connection and does not upload the files. The Rohan package contains compound formats such as .raw, .map, .eti, .gtx, and .gbf. This viewer accepts exported GLB files and does not decode those formats.

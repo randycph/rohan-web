@@ -30,7 +30,7 @@ const dist = new URL('../dist/', import.meta.url);
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8' };
 const server = createServer(async (request, response) => {
   const path = request.url.split('?')[0];
-  const file = path === '/' ? indexFile : /^\/assets\/[\w.-]+$/.test(path) ? new URL(path.slice(1), dist) : null;
+  const file = path === '/' ? indexFile : path === '/solo.html' ? new URL('solo.html', dist) : /^\/assets\/[\w.-]+$/.test(path) ? new URL(path.slice(1), dist) : null;
   if (!file || request.method !== 'GET') {
     response.writeHead(404).end();
     return;
