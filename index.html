@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101e21">
+    <title>Beacon Vale</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Beacon Vale</h1>
+        <p id="status" role="status">Choose an explorer</p>
+      </header>
+      <section id="viewport" aria-label="3D world">
+        <form id="join">
+          <label>Explorer name <input id="name" required maxlength="24" autocomplete="off" value="Explorer"></label>
+          <button>Enter world</button>
+        </form>
+        <div id="hud" hidden>
+          <div id="stats"></div>
+          <p id="hint">Find the keeper by the blue beacon.</p>
+        </div>
+      </section>
+      <div id="controls" hidden>
+        <div class="movement" aria-label="Movement">
+          <button data-key="KeyW" aria-label="North">↑</button>
+          <button data-key="KeyA" aria-label="West">←</button>
+          <button data-key="KeyS" aria-label="South">↓</button>
+          <button data-key="KeyD" aria-label="East">→</button>
+        </div>
+        <button id="interact">Talk · E</button>
+        <button id="attack">Strike · Space</button>
+      </div>
+      <section id="chat" aria-label="World chat" hidden>
+        <div id="messages" role="log"></div>
+        <form id="chat-form">
+          <input id="chat-text" maxlength="160" placeholder="Message the vale" aria-label="Chat message" required>
+          <button>Send</button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
